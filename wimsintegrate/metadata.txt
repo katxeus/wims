@@ -1,0 +1,40 @@
+# This file contains metadata for your plugin. Since
+# version 2.0 of QGIS this is the proper way to supply
+# information about a plugin. The old method of
+# embedding metadata in __init__.py
+# is no longer supported since version 2.0.
+
+# Mandatory items:
+
+[general]
+name=WIMS Integrate
+qgisMinimumVersion=3.22
+description=Aggregates WIMS field data with Web Services
+version=v4.12.0
+author=james Katwere
+email=katxeus@gmail.com
+
+# End of mandatory metadata
+
+# Recommended items:
+
+changelog=
+    Check out the complete changelog on: https://github.com/katxeus/wims
+
+# Tags are comma separated with spaces allowed
+tags=WIMS, Android, iOS, Windows, Linux, mobile, smartphone, tablet, WIMS, cloud, field, fieldwork, GNSS, GPS, sensors, synchronization, offline, wimsintegrate, simple, collaborative
+
+homepage=https://github.com/katxeus/wims
+tracker=https://github.com/katxeus/wims/issues
+repository=https://github.com/katxeus/wims
+category=Plugins
+icon=resources/icon.png
+# experimental flag
+experimental=False
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False
+
+about=
+    This plugin facilitates packaging, aggregates and integrates WIMS QGIS projects with WIMS Field Data for collaboration with Wayleaves field teams<br>
+    It analyses the current project and suggests (and performs) actions needed to make the project working on WIMS field mobile application.
