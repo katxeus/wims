@@ -432,14 +432,14 @@ class WIMSIntegrate(object):
 
     def show_cloud_overview_dialog(self):
         """
-        Show the QFieldCloud overview dialog.
+        Show the WIMSWeb overview dialog.
         """
         dlg = CloudProjectsDialog(self.network_manager, self.iface.mainWindow())
         dlg.show()
 
     def show_cloud_project_details_dialog(self):
         """
-        Show the QFieldCloud project details dialog.
+        Show the WIMSWeb project details dialog.
         """
         currently_open_project = (
             self.network_manager.projects_cache.currently_open_project
@@ -450,7 +450,7 @@ class WIMSIntegrate(object):
         dlg.show_project_form()
 
     def sync_qfieldcloud_project(self):
-        """Synchronize the current QFieldCloud project"""
+        """Synchronize the current WIMS Web project"""
         currently_open_project = (
             self.network_manager.projects_cache.currently_open_project
         )

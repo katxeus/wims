@@ -10,8 +10,8 @@
 name=WIMS Integrate
 qgisMinimumVersion=3.22
 description=Aggregates WIMS field data with Web Services
-version=v4.12.0
-author=james Katwere
+version=v5.24.3
+author=memd
 email=katxeus@gmail.com
 
 # End of mandatory metadata
@@ -19,12 +19,12 @@ email=katxeus@gmail.com
 # Recommended items:
 
 changelog=
-    Check out the complete changelog on: https://github.com/katxeus/wims
+    Check out the complete changelog on: https://github.com/katxeus/wimsintegrate/releases
 
 # Tags are comma separated with spaces allowed
 tags=WIMS, Android, iOS, Windows, Linux, mobile, smartphone, tablet, WIMS, cloud, field, fieldwork, GNSS, GPS, sensors, synchronization, offline, wimsintegrate, simple, collaborative
 
-homepage=https://github.com/katxeus/wims
+homepage=https://memd.go.ug
 tracker=https://github.com/katxeus/wims/issues
 repository=https://github.com/katxeus/wims
 category=Plugins
@@ -36,5 +36,5 @@ experimental=False
 deprecated=False
 
 about=
-    This plugin facilitates packaging, aggregates and integrates WIMS QGIS projects with WIMS Field Data for collaboration with Wayleaves field teams<br>
+    This plugin facilitates packaging, aggregation and integration of WIMS QGIS projects with WIMS Field Data for collaboration with Wayleaves field teams<br>
     It analyses the current project and suggests (and performs) actions needed to make the project working on WIMS field mobile application.
