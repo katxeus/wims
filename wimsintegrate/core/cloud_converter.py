@@ -148,7 +148,7 @@ class CloudConverter(QObject):
                 )
 
             title = self.project.title()
-            title_suffix = self.tr("(QFieldCloud)")
+            title_suffix = self.tr("(WIMS Web)")
             if not title.endswith(title_suffix):
                 self.project.setTitle("{} {}".format(title, title_suffix))
             # Now we have a project state which can be saved as cloud project

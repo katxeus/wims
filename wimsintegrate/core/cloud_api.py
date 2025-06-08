@@ -177,8 +177,8 @@ class CloudNetworkAccessManager(QObject):
     @staticmethod
     def server_urls() -> List[str]:
         return [
-            "http://192.168.1.5:8011/",
-            "http://192.168.1.5:8011/",
+            "http://154.72.198.46:8011/",
+            "http://154.72.198.46:8011/",
             "http://localhost:8002/",
         ]
 
@@ -256,7 +256,7 @@ class CloudNetworkAccessManager(QObject):
             self.login(username, password)
 
     def login(self, username: str, password: str) -> Optional[QNetworkReply]:
-        """Login to QFieldCloud"""
+        """Login to WIMSWeb"""
         # don't login multiple times
         if self.is_login_active:
             return
@@ -279,7 +279,7 @@ class CloudNetworkAccessManager(QObject):
         return self.cloud_get("auth/user/", {"token": token})
 
     def logout(self) -> QNetworkReply:
-        """Logout to QFieldCloud"""
+        """Logout to WIMSWeb"""
 
         reply = self.cloud_post("auth/logout/")
         reply.finished.connect(lambda: self._on_logout_finished(reply))
@@ -287,12 +287,12 @@ class CloudNetworkAccessManager(QObject):
         return reply
 
     def get_projects(self, should_include_public: bool = False) -> QNetworkReply:
-        """Get QFieldCloud projects"""
+        """Get WIMSWeb projects"""
         params = {"include-public": "1"} if should_include_public else {}
         return self.cloud_get("projects", params)
 
     def get_projects_not_async(self, should_include_public: bool = False) -> List[Dict]:
-        """Get QFieldCloud projects synchronously"""
+        """Get WIMSWeb projects synchronously"""
         headers = {"Authorization": "token {}".format(self._token)}
         params = {"include-public": "1"} if should_include_public else {}
 
@@ -308,7 +308,7 @@ class CloudNetworkAccessManager(QObject):
     def create_project(
         self, name: str, owner: str, description: str, private: bool
     ) -> QNetworkReply:
-        """Create a new QFieldCloud project"""
+        """Create a new WIMSWeb project"""
 
         return self.cloud_post(
             "projects/",
@@ -323,7 +323,7 @@ class CloudNetworkAccessManager(QObject):
     def update_project(
         self, project_id: str, name: str, description: str
     ) -> QNetworkReply:
-        """Update an existing QFieldCloud project"""
+        """Update an existing WIMSWeb project"""
 
         return self.cloud_patch(
             ["projects", project_id],
@@ -334,7 +334,7 @@ class CloudNetworkAccessManager(QObject):
         )
 
     def delete_project(self, project_id: str) -> QNetworkReply:
-        """Delete an existing QFieldCloud project"""
+        """Delete an existing WIMSWeb project"""
 
         return self.cloud_delete(["projects", project_id])
 
@@ -363,7 +363,7 @@ class CloudNetworkAccessManager(QObject):
         return self.cloud_delete("files/" + filename)
 
     def set_token(self, token: str, update_auth: bool = False) -> None:
-        """Sets QFieldCloud authentication token to be used by all the following requests. Set to empty string to disable token authentication."""
+        """Sets WIMSWeb authentication token to be used by all the following requests. Set to empty string to disable token authentication."""
         if update_auth:
             self.set_auth(self.url, token=token)
 
@@ -704,7 +704,7 @@ class CloudNetworkAccessManager(QObject):
         if not error_str:
             error_str = self.tr("Sign in failed.")
 
-        html = '<a href="http://192.168.1.5:8011/accounts/password/reset/">{}?</a>'.format(
+        html = '<a href="http://154.72.198.46:8011/accounts/password/reset/">{}?</a>'.format(
             self.tr("Forgot password")
         )
 

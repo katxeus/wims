@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """
 /***************************************************************************
- QFieldCloud
+ WIMSWeb
                              -------------------
         begin                : 2020-07-13
         git sha              : $Format:%H$
@@ -63,11 +63,11 @@ class QFieldCloudItemProvider(QgsDataItemProvider):
 
 
 class QFieldCloudRootItem(QgsDataCollectionItem):
-    """QFieldCloud root"""
+    """WIMSWeb root"""
 
     def __init__(self, network_manager: CloudNetworkAccessManager):
         QgsDataCollectionItem.__init__(
-            self, None, "QFieldCloud", "/QFieldCloud", "QFieldCloudProvider"
+            self, None, "WIMS Web", "/WIMSWeb", "QFieldCloudProvider"
         )
         self.setIcon(
             QIcon(os.path.join(os.path.dirname(__file__), "../resources/cloud_off.svg"))
@@ -95,7 +95,7 @@ class QFieldCloudRootItem(QgsDataCollectionItem):
         self.setState(QgsDataItem.Populated)
 
         if self.error:
-            error_item = QgsErrorItem(self, self.error, "/QFieldCloud/error")
+            error_item = QgsErrorItem(self, self.error, "/WIMSWeb/error")
             error_item.setIcon(
                 QIcon(os.path.join(os.path.dirname(__file__), "../resources/cloud.svg"))
             )
@@ -134,10 +134,10 @@ class QFieldCloudRootItem(QgsDataCollectionItem):
 
 
 class QFieldCloudGroupItem(QgsDataCollectionItem):
-    """QFieldCloud group data item."""
+    """WIMSWeb group data item."""
 
     def __init__(self, parent, name, project_type, icon, order):
-        super(QFieldCloudGroupItem, self).__init__(parent, name, "/QFieldCloud/" + name)
+        super(QFieldCloudGroupItem, self).__init__(parent, name, "/WIMSWeb/" + name)
 
         self.network_manager = parent.network_manager
         self.project_type = project_type
@@ -170,14 +170,14 @@ class QFieldCloudGroupItem(QgsDataCollectionItem):
 
 
 class QFieldCloudProjectItem(QgsDataItem):
-    """QFieldCloud project item."""
+    """WIMSWeb project item."""
 
     def __init__(self, parent, project):
         super(QFieldCloudProjectItem, self).__init__(
             QgsDataItem.Collection,
             parent,
             project.name,
-            "/QFieldCloud/project/" + project.id,
+            "/WIMSWeb/project/" + project.id,
         )
         self.project_id = project.id
         project = parent.network_manager.projects_cache.find_project(self.project_id)

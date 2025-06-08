@@ -145,7 +145,7 @@ class CloudCreateProjectWidget(QWidget, WidgetUi):
                     None,
                     self.tr("Warning"),
                     self.tr(
-                        "The project name is already present in your QFieldCloud repository, please pick a different name."
+                        "The project name is already present in your WIMSWeb repository, please pick a different name."
                     ),
                 )
                 return
@@ -227,7 +227,7 @@ class CloudCreateProjectWidget(QWidget, WidgetUi):
         except CloudException as err:
             QApplication.restoreOverrideCursor()
             critical_message = self.tr(
-                "QFieldCloud rejected project creation:\n{}"
+                "WIMSWeb rejected project creation:\n{}"
             ).format(err)
             self.error.emit(critical_message)
             self.stackedWidget.setCurrentWidget(self.projectDetailsPage)
