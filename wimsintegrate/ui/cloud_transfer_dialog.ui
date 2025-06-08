@@ -36,7 +36,7 @@
        <item>
         <widget class="QLabel" name="projectFilesLabel">
          <property name="text">
-          <string>Please provide a directory within which a local copy of the QFieldCloud project will be stored.</string>
+          <string>Please provide a directory within which a local copy of the WIMS Web project will be stored.</string>
          </property>
          <property name="wordWrap">
           <bool>true</bool>
@@ -96,7 +96,7 @@
        <item>
         <widget class="QLabel" name="feedbackLabel_2">
          <property name="text">
-          <string>The project check provides automatic feedback for some common mistakes when using QField, WIMSIntegrate and QFieldCloud. Lines starting with ERROR show problems in your project configuration that must be fixed before proceeding. Lines starting with WARNING are suggestions what you can improve.</string>
+          <string>The project check provides automatic feedback for some common mistakes when using QField, WIMSIntegrate and WIMSWeb. Lines starting with ERROR show problems in your project configuration that must be fixed before proceeding. Lines starting with WARNING are suggestions what you can improve.</string>
          </property>
          <property name="wordWrap">
           <bool>true</bool>
@@ -389,7 +389,7 @@
               </font>
              </property>
              <property name="text">
-              <string>QFieldCloud project name</string>
+              <string>WIMS Web project name</string>
              </property>
             </widget>
            </item>

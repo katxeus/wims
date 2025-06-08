@@ -504,7 +504,7 @@
              <item>
               <widget class="QPushButton" name="editOnlineButton">
                <property name="text">
-                <string>Edit on QFieldCloud</string>
+                <string>Edit on WIMS Web</string>
                </property>
               </widget>
              </item>
